@@ -1,30 +1,29 @@
-## Core Features
+# scDistiller
 
-### OptimizeRes: Automated clustering optimization
+`scDistiller` is a lightweight toolkit designed for single-cell RNA-seq analysis. It aims to provide high-quality matrix inputs for downstream advanced analyses (such as cell-cell communication analysis with CellChat/NicheNet) through automated clustering optimization and precise data cleaning.
 
-Automatically determines the optimal clustering resolution based on the **Silhouette Score**. It supports downsampling strategies for large-scale single-cell datasets to improve computational efficiency.
+## Installation
 
-### PlotTopMarkers: Fast marker identification and visualization
+You can install `scDistiller` from GitHub using `devtools`:
 
-Rapidly identifies highly enriched marker genes using the **presto** package and generates publication-quality standardized heatmaps for marker visualization.
-
-### PurifyCells: General anchor-based cell purification engine
-
-A flexible filtering framework that uses core marker genes and whitelist-based strategies to accurately extract specific cellular niches while reducing background contamination and unwanted signals.
-
-### CheckStability: Clustering stability assessment
-
-Evaluates clustering robustness through bootstrap resampling, providing quantitative assessment of clustering reliability.
-
-## Usage Example
-
-```r
+```R
+devtools::install_github("JunChou-x/scDistiller")
+Core Features
+OptimizeRes: Automated clustering optimization
+Automatically identifies the optimal resolution based on the Silhouette Score and supports downsampling strategies for large-scale datasets.
+PlotTopMarkers: Rapid feature extraction
+Quickly identifies marker genes using the presto package and generates publication-quality standardized heatmaps.
+PurifyCells: General anchor-based filtering engine
+Precisely extracts specific cellular niches through core gene markers and whitelist-based filtering strategies while removing background noise.
+CheckStability: Clustering stability assessment
+Evaluates the reliability of clustering results using bootstrap resampling.
+Usage Example
 library(scDistiller)
 
-# 1. Automatically optimize clustering resolution
+# 1. Automatically identify the optimal clustering resolution
 pbmc <- OptimizeRes(pbmc)
 
-# 2. Rapid marker identification and visualization
+# 2. Rapid marker visualization
 markers <- PlotTopMarkers(pbmc)
 
 # 3. Purify target cell populations
@@ -37,3 +36,8 @@ pbmc <- PurifyCells(
 
 # 4. Evaluate clustering stability
 stability <- CheckStability(pbmc)
+Contribution
+
+This toolkit is developed and maintained by JunChou-x.
+
+If you encounter any bugs or have suggestions, please submit an Issue.
