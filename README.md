@@ -8,6 +8,8 @@ You can install `scDistiller` from GitHub using `devtools`:
 
 ```R
 devtools::install_github("JunChou-x/scDistiller")
+```
+
 Core Features
 OptimizeRes: Automated clustering optimization
 Automatically identifies the optimal resolution based on the Silhouette Score and supports downsampling strategies for large-scale datasets.
@@ -18,6 +20,8 @@ Precisely extracts specific cellular niches through core gene markers and whitel
 CheckStability: Clustering stability assessment
 Evaluates the reliability of clustering results using bootstrap resampling.
 Usage Example
+
+```R
 library(scDistiller)
 
 # 1. Automatically identify the optimal clustering resolution
@@ -36,6 +40,7 @@ pbmc <- PurifyCells(
 
 # 4. Evaluate clustering stability
 stability <- CheckStability(pbmc)
+```
 Contribution
 
 This toolkit is developed and maintained by JunChou-x.
