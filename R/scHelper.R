@@ -541,7 +541,7 @@ shStability <- function(object, res = NULL, n_iter = 10, sample_ratio = 0.8) {
   }
   
   message(sprintf(">> [shStability] 主导 Cluster 数: %d | 稳定性分数: %.2f", mode_val, stability_score))
-  message(">> [shStability] 专家解读: ", interpretation)
+  message(">> [shStability] 解读: ", interpretation)
   
   return(list(
     counts          = cluster_counts,
